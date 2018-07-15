@@ -55,7 +55,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     // Attach an asynchronous callback to read the data at our posts reference
     standard.on("value", (snapshot) => {
       snapshot.forEach((playerInt) => {
-        console.log(playerInt.val().firstName + playerInt.val().lastName);
+        console.log(playerInt.val().firstName + " " + playerInt.val().lastName);
         agent.add(playerInt.val().firstName + playerInt.val().lastName);
       });
     }, (errorObject) => {
