@@ -69,9 +69,117 @@ snapshot.forEach(function(childSnap){
     agent.add(`I'm sorry, can you try again?`);
 }
 
+  function points(agent) {
+
+    agent.add("Test Code: In Points Cloud Function");
+
+    var dict = {}; // create an empty array
+    var player = ""; // best player for sort
+    var points= 0; // starting points for sort
+  
+   // Database Connection Code
+    var db = admin.database();
+    var reference = db.ref("league").child("top ten").child("points");
+    reference.on("value", (snapshot) => {
+
+
+      snapshot.forEach((playerInt) => {
+
+      dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
+
+      });
+    for(var key in dict) { // loops through dictionary values and chooses best
+     
+    if (dict[key] > points) {
+            player = key;
+            points = dict[key];
+      }
+          }
+
+    //prints to console found out on firebase console-functions-logs/agent to google
+   console.log(player);
+   agent.add("The Best Scorer is "+player+" with "+points+" points");
+   
+ }, (errorObject) => {
+      console.log("The read failed: heres why " + errorObject.code);
+    });
+
+  function freethrows(agent) {
+
+    agent.add("Test Code: In Points Cloud Function");
+
+    var dict = {}; // create an empty array
+    var player = ""; // best player for sort
+    var points= 0; // starting points for sort
+  
+   // Database Connection Code
+    var db = admin.database();
+    var reference = db.ref("league").child("top ten").child("freethrows");
+    reference.on("value", (snapshot) => {
+
+
+      snapshot.forEach((playerInt) => {
+
+      dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
+
+      });
+    for(var key in dict) { // loops through dictionary values and chooses best
+     
+    if (dict[key] > points) {
+            player = key;
+            points = dict[key];
+      }
+          }
+
+  //prints to console found out on firebase console-functions-logs/agent to google
+   console.log(player);
+   agent.add("The Best Free Throw Shooter is "+player+" with "+points+" points");
+   
+ }, (errorObject) => {
+      console.log("The read failed: heres why " + errorObject.code);
+    });
+
+  function assists(agent) {
+
+    agent.add("Test Code: In Points Cloud Function");
+
+    var dict = {}; // create an empty array
+    var player = ""; // best player for sort
+    var points= 0; // starting points for sort
+  
+   // Database Connection Code
+    var db = admin.database();
+    var reference = db.ref("league").child("top ten").child("assists");
+    reference.on("value", (snapshot) => {
+
+
+      snapshot.forEach((playerInt) => {
+
+      dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
+
+      });
+    for(var key in dict) { // loops through dictionary values and chooses best
+     
+    if (dict[key] > points) {
+            player = key;
+            points = dict[key];
+      }
+          }
+
+  //prints to console found out on firebase console-functions-logs/agent to google
+   console.log(player);
+   agent.add("The Player With the Most Assists is "+player+" with "+assists+" assists");
+   
+ }, (errorObject) => {
+      console.log("The read failed: heres why " + errorObject.code);
+    });
+
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('firstintentt', fallback);
+  intentMap.set('points', points);
+  intentMap.set('freethrows', freethrows);
+  intentMap.set('assists', assists);
   // intentMap.set('your intent name here', yourFunctionHandler);
   // intentMap.set('your intent name here', googleAssistantHandler);
   agent.handleRequest(intentMap);
