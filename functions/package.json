@@ -16,12 +16,13 @@
   },
   "dependencies": {
     "actions-on-google": "^2.0.0",
+    "dialogflow": "^0.1.0",
+    "dialogflow-fulfillment": "0.3.0-beta.3",
     "firebase-admin": "^5.11.0",
     "firebase-functions": "^1.0.0",
     "i18n": "^0.8.3",
-    "sprintf-js": "^1.0.3",
-    "dialogflow": "^0.1.0",
-    "dialogflow-fulfillment": "0.3.0-beta.3"
+    "nba": "^4.2.2",
+    "sprintf-js": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
