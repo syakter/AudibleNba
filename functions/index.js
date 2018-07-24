@@ -35,7 +35,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
   function freethrows(agent) {
 
-<<<<<<< HEAD
    // agent.add("Test Code: In FreeThrows Cloud Function");
 
     var dict = {}; // create an empty array
@@ -137,63 +136,23 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 	});
 } 
  
-
-
-=======
-   agent.add("Test Code: In FreeThrows Cloud Function");
-
-    var dict = {}; // create an empty array
-    var player = ""; // best player for sort
-    var points= 0; // starting points for sort
-  
-   // Database Connection Code
-    var db = admin.database();
-    var reference = db.ref("league").child("top ten").child("free throw");
-    reference.on("value", (snapshot) => {
-
-      snapshot.forEach((playerInt) => {
-
-   	  dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
-
-      });
-	  for(var key in dict) { // loops through dictionary values and chooses best
-     
-		if (dict[key] > points) {
-    	  		player = key;
-        		points = dict[key];
-   	 	}
-      	  }
-
-	//prints to console found out on firebase console-functions-logs/agent to google
-	 console.log(player);
-	 agent.add("The Best Free Throw Shooter is "+player+" with "+points+" points");
-   
- }, (errorObject) => {
-      console.log("The read failed: heres why " + errorObject.code);
-    });
-
 	
-  }
->>>>>>> 25e7cbc1b694492d0f871bee6714fe69909746b9
+  
 //add custom function and intent here
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('firstintent', fallback);
   intentMap.set('freeThrow', freethrows);
-<<<<<<< HEAD
   intentMap.set('points' , points);
   intentMap.set('assists' , assists);
-=======
->>>>>>> 25e7cbc1b694492d0f871bee6714fe69909746b9
   agent.handleRequest(intentMap);
+
 });
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 25e7cbc1b694492d0f871bee6714fe69909746b9
+
 //Reference Code Below
 
 // This is how you write to database
@@ -212,8 +171,3 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     // full_name: "Grace Hopper"
     //}
     //});
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 25e7cbc1b694492d0f871bee6714fe69909746b9
