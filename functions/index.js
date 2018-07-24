@@ -14,7 +14,7 @@ admin.initializeApp({
   databaseURL: "https://audiblenba-93f47.firebaseio.com/"
 });
 
-
+var db = admin.database();
 
 
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
