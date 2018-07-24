@@ -63,7 +63,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
       //prints to console found out on firebase console-functions-logs/agent to google
       console.log(player);
-      agent.add("The best free throw shooter is " + player + " with " + points + " points");
+      agent.add("The player who made the most free throws in the 2018 NBA playoffs was " + player + " with " + points + " ");
 
     }, (errorObject) => {
       console.log("The read failed: heres why " + errorObject.code);
@@ -98,7 +98,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
       // prints to console foubd out on firebase console-functions-logs/agent to google
       console.log(player);
-      agent.add("The best scorer is " + player + " with " + points + " points");
+      agent.add("The player with the most points in the 2018 NBA playoffs was " + player + " with " + points + " ");
 
     }, (errorObject) => {
       console.log("The read failed: here's why " + errorObject.code);
@@ -131,12 +131,117 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
       // prints to console found out on firebase console-function-logs/agent to google
       console.log(player);
-      agent.add("The best player is " + player + " with " + assists + " assists");
+      agent.add("The player with the most assists in the 2018 NBA playoffs was " + player + " with " + assists + " ");
 
     }, (errorObject) => {
       console.log("The read failed: here's why " + errorObject.code);
     });
   }
+
+  function steals(agent) {
+
+    var dict = {}; // create an empty area
+    var player = ""; // best player for sort
+    var steals = 0; // starting points for sort
+
+    // Database Connection Code
+
+    var reference = db.ref("league").child("top ten").child("steals");
+    reference.on("value", (snapshot) => {
+
+      snapshot.forEach((playerInt) => {
+
+        dict[playerInt.key] = playerInt.val() // adds key value pair to dictionary
+
+      });
+      for (var key in dict) { // loops through dictionary values and chooses best
+
+        if (dict[key] > steals) {
+          player = key;
+          steals = dict[key];
+        }
+      }
+
+      // prints to console found out on firebase console-function-logs/agent to google
+      console.log(player);
+      agent.add("The player with most steals in the 2018 NBA playoffs was " + player + " with " + steals + " ");
+
+    }, (errorObject) => {
+      console.log("The read failed: here's why " + errorObject.code);
+    });
+  }
+
+  function rebounds(agent) {
+
+    // agent.add("Test Code: In FreeThrows Cloud Function");
+
+    var dict = {}; // create an empty array
+    var player = ""; // best player for sort
+    var rebounds = 0; // starting points for sort
+
+    // Database Connection Code
+
+    var reference = db.ref("league").child("top ten").child("rebounds");
+    reference.on("value", (snapshot) => {
+
+      snapshot.forEach((playerInt) => {
+
+        dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
+
+      });
+      for (var key in dict) { // loops through dictionary values and chooses best
+
+        if (dict[key] > rebounds) {
+          player = key;
+          rebounds = dict[key];
+        }
+      }
+
+      //prints to console found out on firebase console-functions-logs/agent to google
+      console.log(player);
+      agent.add("The player with the most rebounds in the 2018 NBA playoffs was " + player + " with " + rebounds + " ");
+
+    }, (errorObject) => {
+      console.log("The read failed: heres why " + errorObject.code);
+    });
+  }
+
+  function threepointers(agent) {
+
+    // agent.add("Test Code: In FreeThrows Cloud Function");
+
+    var dict = {}; // create an empty array
+    var player = ""; // best player for sort
+    var threepointers = 0; // starting points for sort
+
+    // Database Connection Code
+
+    var reference = db.ref("league").child("top ten").child("three point");
+    reference.on("value", (snapshot) => {
+
+      snapshot.forEach((playerInt) => {
+
+        dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
+
+      });
+      for (var key in dict) { // loops through dictionary values and chooses best
+
+        if (dict[key] > threepointers) {
+          player = key;
+          threepointers = dict[key];
+        }
+      }
+
+      //prints to console found out on firebase console-functions-logs/agent to google
+      console.log(player);
+      agent.add("The player who made the most threes in the 2018 playoffs was " + player + " with " + threepointers + " ");
+
+    }, (errorObject) => {
+      console.log("The read failed: heres why " + errorObject.code);
+    });
+  }
+
+
 
 
 
@@ -147,6 +252,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('freeThrow', freethrows);
   intentMap.set('points', points);
   intentMap.set('assists', assists);
+  intentMap.set('steals' , steals);
+  intentMap.set('rebounds' , rebounds);
+  intentMap.set('threePoints' , threepointers);
   agent.handleRequest(intentMap);
 
 });
