@@ -42,7 +42,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     var points= 0; // starting points for sort
   
    // Database Connection Code
-    var db = admin.database();
+
     var reference = db.ref("league").child("top ten").child("free throw");
     reference.on("value", (snapshot) => {
 
@@ -76,7 +76,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     var points = 0; // starting points for sort
 
    // Database Connection Code
-    var db = admin.database();
+
     var reference = db.ref("league").child("top ten").child("points");
     reference.on("value", (snapshot) => {
 
@@ -110,7 +110,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 	var assists = 0; // starting points for sort
 
 	// Database Connection Code
-	var db = admin.database();
+
 	var reference = db.ref("league").child("top ten").child("assists");
 	reference.on("value", (snapshot) => {
 
