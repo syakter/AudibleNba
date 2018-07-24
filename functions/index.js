@@ -14,7 +14,7 @@ admin.initializeApp({
   databaseURL: "https://audiblenba-93f47.firebaseio.com/"
 });
 
-var db = admin.database();
+
 
 
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
@@ -24,8 +24,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
   console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
+  var db = admin.database();
+
   function welcome(agent) {
-	agent.add("Hi, You've connected to Audible NBA Back End Service");
+    agent.add("Hi, You've connected to Audible NBA Back End Service");
   }
 
   function fallback(agent) {
@@ -35,47 +37,47 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
   function freethrows(agent) {
 
-   // agent.add("Test Code: In FreeThrows Cloud Function");
+    // agent.add("Test Code: In FreeThrows Cloud Function");
 
     var dict = {}; // create an empty array
     var player = ""; // best player for sort
-    var points= 0; // starting points for sort
-  
-   // Database Connection Code
+    var points = 0; // starting points for sort
+
+    // Database Connection Code
 
     var reference = db.ref("league").child("top ten").child("free throw");
     reference.on("value", (snapshot) => {
 
       snapshot.forEach((playerInt) => {
 
-   	  dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
+        dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
 
       });
-	  for(var key in dict) { // loops through dictionary values and chooses best
-     
-		if (dict[key] > points) {
-    	  		player = key;
-        		points = dict[key];
-   	 	}
-      	  }
+      for (var key in dict) { // loops through dictionary values and chooses best
 
-	//prints to console found out on firebase console-functions-logs/agent to google
-	 console.log(player);
-	 agent.add("The best free throw shooter is "+player+" with "+points+" points");
-   
- }, (errorObject) => {
+        if (dict[key] > points) {
+          player = key;
+          points = dict[key];
+        }
+      }
+
+      //prints to console found out on firebase console-functions-logs/agent to google
+      console.log(player);
+      agent.add("The best free throw shooter is " + player + " with " + points + " points");
+
+    }, (errorObject) => {
       console.log("The read failed: heres why " + errorObject.code);
     });
-}
+  }
 
 
   function points(agent) {
-	
+
     var dict = {}; // create an empty array
     var player = ""; // best player for sort
     var points = 0; // starting points for sort
 
-   // Database Connection Code
+    // Database Connection Code
 
     var reference = db.ref("league").child("top ten").child("points");
     reference.on("value", (snapshot) => {
@@ -84,67 +86,67 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
       snapshot.forEach((playerInt) => {
 
         dict[playerInt.key] = playerInt.val() // adds key value pair to dictionary
-	
+
       });
-        for(var key in dict) { // loops through dictionary values and chooses best
+      for (var key in dict) { // loops through dictionary values and chooses best
 
-	    if (dict[key] > points) {
-		player = key;
-		points = dict[key];
-	    }
-	}
+        if (dict[key] > points) {
+          player = key;
+          points = dict[key];
+        }
+      }
 
-	// prints to console foubd out on firebase console-functions-logs/agent to google
-	console.log(player);
-	agent.add("The best scorer is "+player+" with "+points+" points");
+      // prints to console foubd out on firebase console-functions-logs/agent to google
+      console.log(player);
+      agent.add("The best scorer is " + player + " with " + points + " points");
 
-}, (errorObject) => {
-	console.log("The read failed: here's why " + errorObject.code);
-	});
-}
+    }, (errorObject) => {
+      console.log("The read failed: here's why " + errorObject.code);
+    });
+  }
 
   function assists(agent) {
 
-	var dict = {}; // create an empty area
-	var player = ""; // best player for sort
-	var assists = 0; // starting points for sort
+    var dict = {}; // create an empty area
+    var player = ""; // best player for sort
+    var assists = 0; // starting points for sort
 
-	// Database Connection Code
+    // Database Connection Code
 
-	var reference = db.ref("league").child("top ten").child("assists");
-	reference.on("value", (snapshot) => {
+    var reference = db.ref("league").child("top ten").child("assists");
+    reference.on("value", (snapshot) => {
 
-		snapshot.forEach((playerInt) => {
+      snapshot.forEach((playerInt) => {
 
-		dict[playerInt.key] = playerInt.val() // adds key value pair to dictionary
-		
-		});
-			for(var key in dict) { // loops through dictionary values and chooses best
+        dict[playerInt.key] = playerInt.val() // adds key value pair to dictionary
 
-				if (dict[key] > assists) {
-					player = key;
-					assists = dict[key];
-				}
-			}
+      });
+      for (var key in dict) { // loops through dictionary values and chooses best
 
-			// prints to console found out on firebase console-function-logs/agent to google
-			console.log(player);
-			agent.add("The best player is "+player+" with "+assists+" assists");
+        if (dict[key] > assists) {
+          player = key;
+          assists = dict[key];
+        }
+      }
 
-}, (errorObject) => {
-	console.log("The read failed: here's why " + errorObject.code);
-	});
-} 
- 
-	
-  
-//add custom function and intent here
+      // prints to console found out on firebase console-function-logs/agent to google
+      console.log(player);
+      agent.add("The best player is " + player + " with " + assists + " assists");
+
+    }, (errorObject) => {
+      console.log("The read failed: here's why " + errorObject.code);
+    });
+  }
+
+
+
+  //add custom function and intent here
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('firstintent', fallback);
   intentMap.set('freeThrow', freethrows);
-  intentMap.set('points' , points);
-  intentMap.set('assists' , assists);
+  intentMap.set('points', points);
+  intentMap.set('assists', assists);
   agent.handleRequest(intentMap);
 
 });
