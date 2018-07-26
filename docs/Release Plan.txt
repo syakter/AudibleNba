@@ -1,0 +1,51 @@
+﻿Release Plan
+Audible NBA
+115 Final Release
+Revision number 01
+Revision Date: July 20, 2018
+Release Date July 26, 2018
+
+
+High level goals: 
+
+
+Be able to converse with the Google Assistant to ask and discuss about the 2018 NBA playoffs. A user should be able to ask about various NBA statistics, and even intelligently converse with the system. 
+
+
+User stories for release:
+
+
+* Sprint 1
+   * As a [developer], I want to [familiarize myself with Dialogflow, Node.js, and Firebase], in order to [be able to create a work environment in which the modular “AudibleNBA” will be created]
+      * Familiarize oneself with Dialogflow software [Talha, Avery, Akyar, Trey, Samin] [13]
+      * Familiarize oneself with Firebase and databases [Trey, Samin] [5]
+   * As a [user], I want to [have a list of questions for the “AudibleNBA” chatbot], in order to [know how I can react with the product more effectively]
+      * Effectively and appropriately devise sample/minimum questions to be correctly answered by the AudibleNBA chatbot [Talha, Akyar, Avery] [3]
+   * As a [developer], I want to [familiarize/re-familiarize myself more with Javascript and the abstractness of the language], in order to [be able to and construct functionality and modularity in the backend code of “AudibleNBA”]
+      * Familiarize or re-familiarize oneself with Javascript as it will be the environment in which we will be coding [Samin, Avery, Akyar] [5]
+* Sprint 2
+   * As a [user], I want to [be able to view documentation for the utilized database], in order to [understand the scope and range of “AudibleNBA” as well as the organization of the chatbot all together]
+      * Have a database created on Firebase in an organized manner [Samin, Talha] [8]
+      * Write code to store and receive data to and from Firebase [Samin] [5]
+   * As a [user], I want to [speak to an actual, physical voice], in order to [experience a focal and main selling point of the “AudibleNBA” chatbot]
+      * Connect webHook to a physical, speaking google home [Talha] [5]
+   * As a [user], I want to [be able to to query data from the database], in order to [experience the main functionality of “AudibleNBA”]
+      * Figure out how to connect database to webHook as well as how everyone can edit [Trey] [5]
+      * Devise a Javascript function that answers a question specified from Sprint 1, User Story 2 [Trey (mostly), Avery, Akyar, Samin] [13]
+      * Debug and test everyone’s code [Samin] [5]
+* Sprint 3
+   * As a [user], I want to [ask a basketball specific question that is within the range of “AudibleNBA” and have the specified data returned to me], in order to [utilize the minimum model and purpose of “AudibleNBA” the, as of now, 2018 NBA Playoff google assistant chatbot]
+      * Complete functions for answers to specific questions [Avery, Akyar, Samin] [8]
+      * Complete references so that chatbot responds to appropriate terms [Akyar, Talha] [3]
+   * As a [user], I want to [be greeted and farewelled by an interesting and comedic chatbot, specifically basketball related], in order to [hook me and make my user experience, detail-wise, more enjoyable]
+      * Add code or modify software so that the greeting and farewell are enjoyable [Talha] [5]
+   * As a [user], I want to [experience a refined and little to no issue interface in “AudibleNBA” chatbot], in order to [feel as if I’m using a convenient, simple, and comedic chatbot free of minor problems such as lag or unusual responses] 
+      * Conduct test coding for overall responsiveness of “AudibleNBA” chatbot [Trey, Samin] [5]
+
+
+Product Backlog (Items not in release):
+
+
+* Visual representation of NBA statistics
+* User request for the ith statistic in a series
+* Team specific statistics

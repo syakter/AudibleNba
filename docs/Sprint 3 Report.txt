@@ -1,0 +1,34 @@
+﻿Sprint 3 Report
+Audible NBA
+July 24, 2018
+
+
+Actions to stop
+* If project were to continue, we would stop adding functions until all existing functions are tested and working completely
+Actions to start
+* Start unit testing more frequently. Implement dependency inversion to prevent working code from breaking
+Actions to keep
+* Keep meeting regularly to get project to the point of Google Assistant Directory submission
+Work completed
+* Added a game
+* added random fact function
+* added variations to intents
+* unit testing for each function
+* updated database with data for random fact function
+Work not completed
+* Visualizations were not added to the app for viewing on a device with a screen
+
+
+Work completion rate
+⅚ = 83%
+
+
+* Sprint 3
+   * As a [user], I want to [ask a basketball specific question that is within the range of “AudibleNBA” and have the specified data returned to me], in order to [utilize the minimum model and purpose of “AudibleNBA” the, as of now, 2018 NBA Playoff google assistant chatbot]
+      * Complete functions for answers to specific questions [Avery, Akyar] [8]
+      * Complete references so that chatbot responds to appropriate terms [Akyar, Talha] [3]
+   * As a [user], I want to [be greeted and farewelled by an interesting and comedic chatbot, specifically basketball related], in order to [hook me and make my user experience, detail-wise, more enjoyable]
+      * Add code or modify software so that the greeting and farewell are enjoyable [Talha] [5]
+   * As a [user], I want to [experience a refined and little to no issue interface in “AudibleNBA” chatbot], in order to [feel as if I’m using a convenient, simple, and comedic chatbot free of minor problems such as lag or unusual responses] 
+      * Conduct test coding for overall responsiveness of “AudibleNBA” chatbot [Trey, Samin] [5]
+Samin, Trey, Talha, Akhyar, Avery

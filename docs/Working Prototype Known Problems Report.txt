@@ -1,0 +1,27 @@
+﻿Working Prototype Known Problems Report
+Audible NBA
+July 25, 2018
+
+
+Problems currently exhibited in our project include:
+
+
+* Fallback intent occasionally not played on a misunderstood intent. Program sometimes ends unexpectedly
+   * Location: Dialogflow intents module and/or index.js
+   * Actions for removal: Further NLP training to recognize intents
+   * Other actions: Check index.js for unspecified program exits, time outs, or other errors
+* Delay in recalling function sometimes leads to a timeout and end of program
+   * Location: webhook in Dialogflow
+   * Actions for removal: Improve webhook
+* Does not always pick up synonyms from user trainings which leads to the program ending unexpectedly
+   * Location: Actions on Google console
+   * Actions for removal: Further train intents
+* Fun Fact sometimes causes the app to terminate unexpectedly
+   * Actions on Google
+
+
+
+
+
+
+Samin, Trey, Talha, Akhyar, Avery

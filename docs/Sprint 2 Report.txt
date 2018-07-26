@@ -1,0 +1,48 @@
+﻿Sprint 2 Report
+Audible NBA
+July 17, 2018
+
+
+Actions to stop
+* Making modifications to already designed and established functions
+* Leaving for very short breaks from Google Hangouts calls
+
+
+Actions to start
+* Reviewing each other’s codes and functionalities more extensively
+* Consulting and merging our work more effectively and in a more organized fashion
+
+
+Actions to keep
+* Meeting more in person to allow for each factor and aspect of our whole project to more cohesively come together
+
+
+Work completed
+* Created main function that answered a minimum of devised questions
+* Established an organized database on Firebase
+* Database familiarizing
+* Connecting Google Home mini to web interface
+* Able to test code on respective locals
+
+
+Work not completed
+* Discovered easier method to edit interchangeably
+
+
+Work completion rate
+⅚ = 83%
+
+
+* Sprint 2
+   * As a [user], I want to [be able to view documentation for the utilized database], in order to [understand the scope and range of “AudibleNBA” as well as the organization of the chatbot all together]
+      * Have a database created on Firebase in an organized manner [Samin, Talha] [8]
+      * Be more familiar than the rest with databases [Samin] [5]
+   * As a [user], I want to [speak to an actual, physical voice], in order to [experience a focal and main selling point of the “AudibleNBA” chatbot]
+      * Connect webHook to a physical, speaking google home [Talha] [5]
+   * As a [user], I want to [be able to to query data from the database], in order to [experience the main functionality of “AudibleNBA”]
+      * Figure out how to connect database to webHook as well as how everyone can edit [Trey] [5]
+      * Devise a Javascript function that answers a question specified from Sprint 1, User Story 2 [Trey (mostly), Avery, Akyar] [13]
+      * Devise a way for everyone to be able to test code before affecting the main file [Samin] [5]
+
+
+Samin, Trey, Talha, Akhyar, Avery

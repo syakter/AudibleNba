@@ -1,0 +1,21 @@
+﻿Install Guide
+Audible NBA
+July 26, 2018
+
+
+Installation Guide:
+
+
+1. Power up Google Home and connect to wifi
+2. (During test phase) login to Google using the same account as the application in Actions on Google
+3. Invoke application by saying “Hey Google, talk to Audible NBA”
+4. Invoke a command such as “Who scored the most free throws?” or “Who had the most assists?”
+5. Invoke a game by saying “Let’s play a game”
+6. Invoke a fun fact by saying “Give me a fun fact”
+
+
+User Manual:
+
+
+* If you run into an error, say “Help”
+* If the program does not respond, it may have disconnected. Reconnect by saying “Hey Google, Connect to Audible NBA”

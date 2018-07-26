@@ -1,0 +1,40 @@
+﻿Sprint 1 Report
+Audible NBA
+July 10th, 2018
+
+
+Actions to stop: 
+* Learning technologies without any actual “doing”
+* Rescheduling scrum meetings because of time conflicts
+
+
+Actions to start:
+* Start actually writing some code instead of using tutorial code
+* Talk to each other about problems we’re running into
+
+
+Actions to keep:
+* Keep pushing through and completing all the tasks
+
+
+Work completed:
+* A working database that we can store and pull data to and from
+* A dummy Dialogflow client that responds to user input with a hardcoded response about basketball
+
+
+Work not completed:
+* Functions that send real queries to the database and get responses back depending on the data within the database
+
+
+Work completion rate: ⅔ = 67%
+
+
+* Sprint 1
+   * As a [developer], I want to [familiarize myself with api.ai, Dialogflow, and Firebase], in order to [be able to create a work environment in which the modular “AudibleNBA” will be created]
+      * Familiarize oneself with api.ai and Dialogflow software [Talha, Avery, Akyar, Trey] [13]
+      * Familiarize oneself with Firebase and databases [Trey, Samin] [5]
+   * As a [user], I want to [have a list of/ index of viable questions for the “AudibleNBA” chatbot], in order to [know how I can react with the product more effectively]
+      * Effectively and appropriately devise sample/minimum questions to be correctly answered by the AudibleNBA chatbot [Talha, Akyar, Avery] [3]
+   * As a [developer], I want to [familiarize/re-familiarize myself more with Javascript and the abstractness of the language], in order to [be able to and construct functionality and modularity in the backend code of “AudibleNBA”]
+      * Familiarize or re-familiarize oneself with Javascript as it will be the environment in which we will be coding [Samin, Avery, Akyar] [5]
+Samin, Trey, Talha, Akhyar, Avery
