@@ -36,6 +36,6 @@ npm
 
 * **Trieveon Cooper** ([](https://github.com/) ) - Leading Developer
 * **Avery Gascon** ([averygascon](https://github.com/averygascon)) - Overall Developer
-* **Samin Akter** ([syakter](https://github.com/syakter)) - Database creation/management
+* **Samin Akter** ([syakter](https://github.com/syakter)) - Database Developer / Interface Developer
 * **Akyar Zaman** ([akzaman47](https://github.com/akzaman47)) - Overall Developer
-* **Talha Baqar** ([talha3232](https://github.com/talha3232)) - FrontEnd Developer / Interface developer
+* **Talha Baqar** ([talha3232](https://github.com/talha3232)) - FrontEnd Developer / Interface Developer
