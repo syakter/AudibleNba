@@ -1,0 +1,96 @@
+﻿System and Unit Test Report
+Audible NBA
+July 25, 2018
+
+
+User Stories (25 points)
+1. User story 1 from sprint 1: As a user, I want to retrieve information about a player
+2. User story 2 from sprint 1: As a user, I want to know about free throws, three pointers, total points, assists, and steals
+
+
+Scenario (25 points)
+1. Connect to app from Google Assistant
+   1. Say “Hey Google, connect to Audible NBA”
+   2. Say “Who made the most free throws?”
+   3. Receive verbal response
+
+
+Unit Tests (25 points)
+// test function
+      function testQuery(agent) {
+              agent.add("you successful connected to the database, please check your log for unit tests.");
+             // testWriteData();
+             //testFunFacts();
+             //  testFreethrows();
+              
+              }
+              
+1. As a user, I want to access a query, and receive a certain response
+       function testFunFacts(){
+              var count  = 0;
+              var funfacts = new Array();
+              var reference = db.ref("league").child("funfacts");
+              reference.on("value", (snapshot) => {
+                           snapshot.forEach((playerInt) => {
+                                            console.log(playerInt.key);
+                                            count++;
+                                            });
+                           console.log("Expected 7 and there are "+count+"players listed as seen");
+                           }, (errorObject) => {
+                           console.log("The read failed: heres why " + errorObject.code);
+                           });
+              }
+              
+
+
+              function testFreethrows(agent) {
+              
+              // agent.add("Test Code: In FreeThrows Cloud Function");
+              
+              var dict = {}; // create an empty array
+              var player = ""; // best player for sort
+              var points = 0; // starting points for sort
+              var value = 0;
+              // Database Connection Code
+              
+              var reference = db.ref("league").child("top ten").child("free throw");
+              reference.on("value", (snapshot) => {
+                           
+                           snapshot.forEach((playerInt) => {
+                                            
+                                            dict[playerInt.key] = playerInt.val() //adds key value pair to dictionary
+                                            
+                                            });
+                           for (var key in dict) { // loops through dictionary values and chooses best
+                           
+                           if (key == "chris paul") {
+                           value = dict[key];
+                           console.log("Expect value should be 317 :"+value);
+                           }
+                           }
+                           
+                           //prints to console found out on firebase console-functions-logs/agent to google
+                        
+                           
+                           }, (errorObject) => {
+                           console.log("The read failed: heres why " + errorObject.code);
+                           });
+              }
+
+
+write data test              
+              function testWriteData(){
+                 var db = admin.database();
+              var ref = db.ref("usersbro");
+              var usersRef = ref.child("users");
+              usersRef.set({
+                alanisawesome: {
+                  date_of_birth: "June 23, 1912",
+                  full_name: "Alan Turing"
+               },
+               gracehop: {
+                date_of_birth: "December 9, 1906",
+               full_name: "Grace Hopper"
+              }
+              });
+              }
