@@ -4,7 +4,7 @@
 
 # Introduction
 
-The 2018 NBA Playoffs has come a long way from basketball then. Stats and information of some of your favorite players are readily available via Internet connection. Audible NBA presents to you an interesting, intuitive, and comedic chatbot in which you can physically ask and receive your appropriate response.
+The 2018 NBA Playoffs were one for the books! Stats and information of your favorite players are readily available if you have a Google Home device. AudibleNBA presents to you an interesting, intuitive, and comedic chatbot in which you can physically ask and receive your appropriate response.
 
 **We aim to provide, you, the user with an enjoyable, basketball-oriented question and answer experience.**
 
@@ -14,9 +14,9 @@ How far can AudibleNBA go in a 5-week timespan?
  
 Technologies:
 
- + Backend web framework (Node)
- + Frontend Google Assistant api.ai
- + Developer created and familiar Firebase database
+ + Backend web framework using Node.js
+ + Frontend using Google's api.ai
+ + Database developed using Google Firebase 
 
 ## Using AudibleNBA
 
@@ -34,8 +34,8 @@ npm
 
 ## Authors
 
-* **Trieveon Cooper** ([](https://github.com/) ) - Leading Developer
-* **Avery Gascon** ([averygascon](https://github.com/averygascon)) - Overall Developer
-* **Samin Akter** ([syakter](https://github.com/syakter)) - Database Developer / Interface Developer
-* **Akyar Zaman** ([akzaman47](https://github.com/akzaman47)) - Overall Developer
-* **Talha Baqar** ([talha3232](https://github.com/talha3232)) - FrontEnd Developer / Interface Developer
+* **Samin Akter** ([syakter](https://github.com/syakter)) 
+* **Trieveon Cooper** ([](https://github.com/) ) 
+* **Avery Gascon** ([averygascon](https://github.com/averygascon)) 
+* **Akyar Zaman** ([akzaman47](https://github.com/akzaman47)) 
+* **Talha Baqar** ([talha3232](https://github.com/talha3232)) 
