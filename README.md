@@ -15,7 +15,7 @@ How far can AudibleNBA go in a 5-week timespan?
 Technologies:
 
  + Backend web framework using Node.js
- + Frontend using Google's api.ai
+ + Frontend using Google's DialogFlow
  + Database developed using Google Firebase 
 
 ## Using AudibleNBA
